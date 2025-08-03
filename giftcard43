@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Saanvi!</title>
+  <title>Happy Birthday !</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -141,7 +141,7 @@
   <!-- Card -->
   <div class="card-container">
     <div class="card">
-      <h1>Happy Birthday, Saanvi! 🌼</h1>
+      <h1>Happy Birthday! 🌼</h1>
       <p>You are blooming brighter than ever — like your favorite yellow rose garden.</p>
       <p>On this special day, may you feel loved, joyful, and full of sunshine.</p>
       <p><strong>And Happy New Year!</strong><br>A fresh start, new goals...<br>Focus on yourself and keep shining. 🌟</p>
