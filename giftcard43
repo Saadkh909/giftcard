@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Saanvi!</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      background-color: #fffbe6;
+      transition: background 1s ease-in-out;
+    }
+
+    body.show {
+      background: url('https://t4.ftcdn.net/jpg/09/71/96/91/360_F_971969195_2YdV8qZI9PrqwmQvB8fFSzV6A62szCLk.jpg') no-repeat center center/cover;
+    }
+
+    .click-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #f7b731;
+      color: white;
+      font-size: 1.5em;
+      border: none;
+      border-radius: 50px;
+      padding: 15px 40px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      z-index: 3;
+    }
+
+    .click-button:hover {
+      background: #e0a800;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .card-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      color: #333;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+
+    .card h1 {
+      font-size: 2.4em;
+      color: #f7b731;
+      text-shadow: 0 0 8px #fff3b0;
+      margin-bottom: 20px;
+    }
+
+    .card p {
+      font-size: 1.1em;
+      margin: 12px 0;
+      line-height: 1.6;
+    }
+
+    .floating-rose, .firework {
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .show .floating-rose, .show .firework, .show .card-container {
+      opacity: 1;
+    }
+
+    .floating-rose {
+      position: absolute;
+      width: 70px;
+      animation: float 8s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(3deg); }
+    }
+
+    .rose1 { top: 10%; left: 5%; animation-delay: 0s; }
+    .rose2 { top: 20%; right: 10%; animation-delay: 2s; }
+    .rose3 { bottom: 15%; left: 15%; animation-delay: 3s; }
+    .rose4 { bottom: 10%; right: 20%; animation-delay: 4s; }
+    .rose5 { top: 50%; left: 40%; animation-delay: 1.5s; }
+
+    .firework {
+      position: absolute;
+      width: 10px; height: 10px;
+      background: radial-gradient(circle, #ff0, #f00, transparent);
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(5); opacity: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .card h1 { font-size: 2em; }
+      .card p { font-size: 1em; }
+      .floating-rose { width: 50px; }
+      .card { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Click Button -->
+  <button class="click-button" onclick="revealCard()">Click Me 🎁</button>
+
+  <!-- Roses -->
+  <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Roses-PNG/Yellow_Rose_PNG_Clip_Art_Transparent_Image.png" class="floating-rose rose1" />
+  <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Roses-PNG/Yellow_Rose_Transparent_PNG_Image-500564651.png" class="floating-rose rose2" />
+  <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Roses-PNG/Yellow_Rose_PNG_Clip_Art_Transparent_Image.png" class="floating-rose rose3" />
+  <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Roses-PNG/Yellow_Rose_Transparent_PNG_Image-500564651.png" class="floating-rose rose4" />
+  <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Roses-PNG/Yellow_Rose_PNG_Clip_Art_Transparent_Image.png" class="floating-rose rose5" />
+
+  <!-- Card -->
+  <div class="card-container">
+    <div class="card">
+      <h1>Happy Birthday, Saanvi! 🌼</h1>
+      <p>You are blooming brighter than ever — like your favorite yellow rose garden.</p>
+      <p>On this special day, may you feel loved, joyful, and full of sunshine.</p>
+      <p><strong>And Happy New Year!</strong><br>A fresh start, new goals...<br>Focus on yourself and keep shining. 🌟</p>
+      <p style="margin-top:20px; font-style: italic;">— With love from [Your Name]</p>
+    </div>
+  </div>
+
+  <script>
+    function revealCard() {
+      document.querySelector('.click-button').style.display = 'none';
+      const container = document.querySelector('.card-container');
+      container.style.display = 'flex';
+      document.body.classList.add('show');
+
+      for (let i = 0; i < 20; i++) {
+        const fw = document.createElement('div');
+        fw.classList.add('firework');
+        fw.style.left = Math.random() * 100 + 'vw';
+        fw.style.top = Math.random() * 100 + 'vh';
+        document.body.appendChild(fw);
+        setTimeout(() => fw.remove(), 1000);
+      }
+    }
+  </script>
+</body>
+</html>
